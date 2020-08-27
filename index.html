@@ -6,7 +6,7 @@
 
   </head>
   <body>
-    <input type="text" placeholder="Binary" id="bin">
+    <input type="text" maxlength="8" placeholder="Binary" id="bin">
     <input type="text" placeholder="Decimal" id="decimal">
     <button onclick="bin2dec()">Submit</button>
 
@@ -17,11 +17,15 @@
 
 
         for( var i=binary.length-1; i>=0; i -- ) {
-          dec += parseInt(binary[i])*Math.pow(2, binary.length-1-i);
+          if(binary[i] == "1" || binary[i] == "0") {
+            dec += parseInt(binary[i])*Math.pow(2, binary.length-1-i);
+          } else {
+            return document.getElementById("decimal").value = "error"
+          }
         }
 
+         return document.getElementById("decimal").value = dec
 
-        document.getElementById("decimal").value = dec
       } 
     </script>
   </body>
