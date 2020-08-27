@@ -6,19 +6,23 @@
 
   </head>
   <body>
+    <input type="text" placeholder="Binary" id="bin">
+    <input type="text" placeholder="Decimal" id="decimal">
+    <button onclick="bin2dec()">Submit</button>
+
     <script type="text/javascript">
-      function bin2dec(binary) {
+      function bin2dec() {
+        var binary = document.getElementById("bin").value;
         var dec = 0;
+
 
         for( var i=binary.length-1; i>=0; i -- ) {
           dec += parseInt(binary[i])*Math.pow(2, binary.length-1-i);
         }
 
-        return dec
+
+        document.getElementById("decimal").innerHTML = dec
       } 
-
-
-      console.log(bin2dec("1001"))
     </script>
   </body>
 </html>
