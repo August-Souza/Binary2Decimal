@@ -23,9 +23,7 @@ input {
   color: #fff;
   padding: 7px 0px 7px 10px;
   background: transparent;
-  transition: border-color 0.2s;  
 }
-
 ::placeholder {
   color: #cacaca;
   opacity: 0.4;
